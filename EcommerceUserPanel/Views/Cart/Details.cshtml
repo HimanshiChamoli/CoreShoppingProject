@@ -1,0 +1,60 @@
+﻿@model EcommerceUserPanel.Models.Products
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+ <style>
+     .mar{
+         margin-left:150px;
+     }
+     
+     .pic:hover{
+         transform:scale(1.5);
+     }
+   
+ </style>
+
+ <center><h2>Product Details</h2></center>
+&nbsp;&nbsp;
+ <div class="row">
+   
+     <div class="col-md-4">
+         
+             <img src="@Html.DisplayFor(m => m.ProductImage)" class="bd-placeholder-img card-img-top pic" width="400" height="500" />
+        
+     </div>
+    
+     <div class="col-md-8">
+         &nbsp;&nbsp;
+         <div class="form-group mar">
+
+             <label for="ProductId">ProductId : </label>
+             @Html.DisplayFor(m => m.ProductId)
+             <br />
+             <label for="ProductName">ProductName : </label>
+             @Html.DisplayFor(m => m.ProductName)
+             <br />
+             <label for="ProductPrice">ProductPrice : </label>
+             @Html.DisplayFor(m => m.ProductPrice)
+             <br />
+             <label for="ProductQuantity">ProductQuantity : </label>
+             @Html.DisplayFor(m => m.ProductQty)
+             <br />
+             @*<label for="CategoryName">ProductCategory : </label>
+             @Html.DisplayFor(m => m.CategoryName)
+             <br />*@
+             @*<label for="ProductSize">ProductSize : </label>
+        @Html.DisplayFor(m => m.ProductSize)
+        <br />*@
+             <label for="ProductDescription">ProductDescription : </label>
+             @Html.DisplayFor(m => m.ProductDescription) 
+             <br />
+         </div>
+         <div class="mar">
+             <a asp-controller="Home" asp-action="Index" class="btn btn-sm btn-outline-secondary">BackToList</a>
+             <a asp-controller="Cart" asp-action="Buy" class="btn btn-sm btn-outline-secondary">Add To Cart</a>
+         </div>
+     </div>
+ </div>

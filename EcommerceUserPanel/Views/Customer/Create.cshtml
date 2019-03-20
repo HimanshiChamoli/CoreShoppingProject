@@ -1,0 +1,77 @@
+﻿@model EcommerceUserPanel.Models.Customers
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<form asp-action="Create" asp-controller="Customer">
+    <div class="row">
+        <h4 class="col-12 mb-3">Basic Details</h4>
+        <div class="col-md-6 mb-3">
+
+            <label asp-for="FirstName"><b>First Name</b></label>
+            <input type="text" asp-for="FirstName" class="form-control" placeholder="Enter First Name">
+
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="LastName"><b>Last Name</b></label>
+            <input type="text" asp-for="LastName" class="form-control" placeholder="Enter Last Name">
+
+        </div>
+        <div class="col-12 mb-3">
+            <label asp-for="Username"><b>User Name</b></label>
+            <input type="text" asp-for="Username" class="form-control" placeholder="Enter User Name">
+        </div>
+        <div class="col-12 mb-3">
+            <label asp-for="Password"><b>Password</b></label>
+            <input type="text" asp-for="Password" class="form-control" placeholder="Enter Password">
+        </div>
+        <div class="col-12 mb-3">
+            <label asp-for="EmailId"><b>Email</b></label>
+            <input type="email" asp-for="EmailId" class="form-control" placeholder="Enter Email">
+        </div>
+
+        <br />
+        <hr />
+        <h4 class="col-12 mb-3">Billing Address</h4>
+        <hr />
+        <br />
+
+        <div class="col-12 mb-3">
+            <label asp-for="Address"><b>Address</b></label>
+            <input type="text" asp-for="Address" class="form-control" placeholder="Enter Address">
+        </div>
+        <div class="col-12 mb-3">
+            <label asp-for="State"><b>State</b></label>
+            <input type="text" asp-for="State" class="form-control" placeholder="Enter City">
+        </div>
+
+        <div class="col-12 mb-3">
+            <b>Country</b>
+            <select class="w-100" id="country">
+                <option value="usa">United States</option>
+                <option value="uk">United Kingdom</option>
+                <option value="ger">Germany</option>
+                <option value="fra">France</option>
+                <option value="ind">India</option>
+                <option value="aus">Australia</option>
+                <option value="bra">Brazil</option>
+                <option value="cana">Canada</option>
+            </select>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="Zip"><b>Zip Code</b></label>
+            <input type="text" asp-for="Zip" class="form-control" placeholder="Enter Zip Code">
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="PhoneNo"><b>PhoneNo</b></label>
+            <input type="text" asp-for="PhoneNo" class="form-control" placeholder="Enter Contact">
+        </div>
+
+
+        <hr class="mb-4">
+
+
+        <a asp-controller="Customer" asp-action="Login" class="btn btn-lg btn-primary btn-block">Submit</a>
+</div>
+</form>
