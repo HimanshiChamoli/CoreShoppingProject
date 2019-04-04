@@ -15,6 +15,11 @@ namespace CoreShoppingAdminPortal.Controllers
         {
             context = _context;
         }
+
+        public VendorController()
+        {
+        }
+
         public IActionResult Index()
         {
             var vendors = context.Vendors.ToList();

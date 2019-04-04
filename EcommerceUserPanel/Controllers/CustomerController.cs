@@ -52,15 +52,15 @@ namespace EcommerceUserPanel.Controllers
                 var userName = user.Username;
                 int custId = ViewBag.cust.CustomerId;
                 if (userName != null && Password != null && userName.Equals(userName)
-                    && Password.Equals("12345"))
+                    && Password.Equals(user.Password))
                 {
                     HttpContext.Session.SetString("uname", userName);
-                    return RedirectToAction("Checkout", "Cart", new { @id = custId });
+                    return RedirectToAction("Index", "Home", new { @id = custId });
                 }
                 else
                 {
                     ViewBag.Error = "Invalid Credentials";
-                    return View("Login");
+                    return View("Index");
                 }
             }
         }

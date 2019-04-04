@@ -43,6 +43,8 @@ namespace EcommerceUserPanel.Controllers
         {
             
             var detail= context.Products.Find(id);
+            var cid = context.Products.Find(id);
+            ViewBag.cname = context.Categories.Find(cid.ProductCategoryId);
             return View(detail);
         }
         [HttpGet]
@@ -196,7 +198,12 @@ namespace EcommerceUserPanel.Controllers
 
             var cart = SessionHelper.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
             ViewBag.cart = cart;
-
+            foreach(var Item1 in cart)
+            {
+                Products p = context.Products.Find(Item1.products.ProductId);
+                p.ProductQty = p.ProductQty - Item1.Quantity;
+                context.SaveChanges();
+            }
             ViewBag.total = cart.Sum(item => item.products.ProductPrice * item.Quantity);
             cart = null;
             SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
