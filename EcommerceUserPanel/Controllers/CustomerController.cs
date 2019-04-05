@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EcommerceUserPanel.Helpers;
 using EcommerceUserPanel.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -55,14 +56,93 @@ namespace EcommerceUserPanel.Controllers
                     && Password.Equals(user.Password))
                 {
                     HttpContext.Session.SetString("uname", userName);
+                    SessionHelper.SetObjectAsJson(HttpContext.Session, "cust", user);
                     return RedirectToAction("Index", "Home", new { @id = custId });
                 }
                 else
                 {
                     ViewBag.Error = "Invalid Credentials";
-                    return View("Index");
+                    return View("Login");
                 }
             }
         }
+        [Route("Logout")]
+        [HttpGet]
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("uname");
+            return RedirectToAction("Index", "Home");
+        }
+        public IActionResult CustomerEdit()
+        {
+            Customers cus = SessionHelper.GetObjectFromJson<Customers>(HttpContext.Session, "cust");
+            return View(cus);
+        }
+        [HttpPost]
+        public IActionResult CustomerEdit(int id, Customers customer)
+        {
+            var c = context.Customers.Where(x => x.Username == customer.Username).SingleOrDefault();
+            c.FirstName = customer.FirstName;
+            c.LastName = customer.LastName;
+            c.Username = customer.Username;
+            c.EmailId = customer.EmailId;
+            c.Address = customer.Address;
+            c.PhoneNo = customer.PhoneNo;
+            c.Country = customer.Country;
+            c.State = customer.State;
+            c.Zip = customer.Zip;
+            context.SaveChanges();
+            SessionHelper.SetObjectAsJson(HttpContext.Session, "cust", c);
+            return RedirectToAction("Index", "Home", new { @id = customer.Username });
+        }
+     
+        public IActionResult Profile(Customers customers)
+        {
+            Customers prof = SessionHelper.GetObjectFromJson<Customers>(HttpContext.Session, "cust");
+            var c = context.Customers.Where(x => x.Username == customers.Username).SingleOrDefault();
+            return View(prof);
+        }
+        [HttpPost]
+    
+
+        public IActionResult OrderHistory()
+        {
+            Customers c = SessionHelper.GetObjectFromJson<Customers>(HttpContext.Session, "cust");
+            List<Orders> ord = context.Orders.Where(x => x.CustomerId == c.CustomerId).ToList();
+            ViewBag.ord = ord;
+            return View();
+        }
+        public IActionResult orderdetail(int id)
+        {
+            List<OrderProducts> op = new List<OrderProducts>();
+            List<Products> products = new List<Products>();
+            op = context.OrderProducts.Where(x => x.OrderId == id).ToList();
+            foreach (var item in op)
+            {
+                Products c = context.Products.Where(x => x.ProductId == item.ProductId).SingleOrDefault();
+                products.Add(c);
+            }
+            ViewBag.p = products;
+            return View();
+        }
+
+        public IActionResult Password(string oldpassword, string newpassword, string newpassword1)
+        {
+            Customers c = SessionHelper.GetObjectFromJson<Customers>(HttpContext.Session, "cust");
+            if (oldpassword == c.Password && newpassword == newpassword1)
+            {
+                Customers cus = context.Customers.Where(x => x.Username == c.Username).SingleOrDefault();
+                cus.Password = newpassword;
+                SessionHelper.SetObjectAsJson(HttpContext.Session, "cust", cus);
+                context.SaveChanges();
+            }
+
+            return RedirectToAction("Profile");
+        }
     }
+
 }
+           
+            
+    

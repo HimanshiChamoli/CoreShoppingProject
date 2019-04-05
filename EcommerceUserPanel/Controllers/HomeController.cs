@@ -41,7 +41,11 @@ namespace EcommerceUserPanel.Controllers
             
             return View();
         }
+        public IActionResult HomePage()
+        {
+            return View();
+        }
 
-
+       
     }
 }

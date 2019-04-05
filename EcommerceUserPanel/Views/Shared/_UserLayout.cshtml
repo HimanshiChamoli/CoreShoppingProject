@@ -5,13 +5,13 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/Template.css" />
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
     
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand"asp-controller="Home" asp-action="Index"
-6>Shopping Mania</a>
+        <a class="navbar-brand" asp-controller="Home" asp-action="Index"
+           6>Shopping Mania</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,7 +21,7 @@
                 <li class="nav-item active">
                     <a class="nav-link" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" asp-controller="Home" asp-action="AboutUs">About Us</a>
                 </li>
                 <li class="nav-item active">
@@ -30,33 +30,43 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item"  asp-controller="ProductCategory" asp-action="Index">Categories</a>
-                     
+                        <a class="dropdown-item" asp-controller="ProductCategory" asp-action="Index">Categories</a>
+
                     </div>
                 </li>
             </ul>
-            <form class="form-inline my-3 my-lg-0">
-                <label class="form-control">
-                    Welcome @Context.Session.GetString("uname")
-                </label>
+            <form class="form-inline my-2 my-lg-0">
+                &nbsp;&nbsp;&nbsp;
+                <a asp-controller="Cart" asp-action="Index"><i class="fa fa-shopping-cart" style="font-size:25px;color:white;" aria-hidden="true">@Context.Session.GetString("cartitem")</i> </a>
+                &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;
+                <a id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user-circle " style="font-size:18px;color:white;" aria-hidden="true"> @Context.Session.GetString("uname")</i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" asp-action="Profile" asp-controller="Customer">My Profile</a>
+                    <a class="dropdown-item" asp-action="Password" asp-controller="Customer">Change Password</a>
+                    <a class="dropdown-item" asp-action="CustomerEdit" asp-controller="Customer">Edit Profile</a>
+                    <a class="dropdown-item" asp-action="OrderHistory" asp-controller="Customer">OrderHistory</a>
+                    @*<a class="dropdown-item" asp-action="Login" asp-controller="Customer">Login</a>*@
+                    <div class="dropdown-divider"></div>
+                    <li class="nav-item dropdown">
 
-                &nbsp;       &nbsp;
+                        @if (Context.Session.GetString("uname") == null)
+                        {
+                            <a class="btn btn-info" asp-action="Login" asp-controller="Customer">Login</a>
+                        }
+                        else
+                        {
+                            <Center><a class="btn btn-info" asp-action="Logout" asp-controller="Customer">Logout</a></Center>
+                        }
+                </div>
+                </li>
 
-                <a asp-controller="Cart" asp-action="Index" class="btn btn-success"><img src="https://img.icons8.com/material-rounded/24/000000/add-shopping-cart.png">@Context.Session.GetString("cartitem") </a>
-
-                &nbsp;       &nbsp;
-                @if (Context.Session.GetString("uname") == null)
-                {
-                    <a class="btn btn-info" asp-action="Login" asp-controller="Customer">Login</a>
-                }
-                else
-                {
-                    <a class="btn btn-info" asp-action="Logout" asp-controller="Customer">Logout</a>
-                }
                 @*<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">*@
             </form>
-            </div>
-        </nav>
+        </div>
+    </nav>
     <main role="main" class="container">
 
        
