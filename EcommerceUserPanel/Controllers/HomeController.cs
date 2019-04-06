@@ -43,7 +43,26 @@ namespace EcommerceUserPanel.Controllers
         }
         public IActionResult HomePage()
         {
-            return View();
+            var product = context.Products.ToList();
+            int j = 0;
+            var cart = SessionHelper.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
+            int i = 0;
+            if (cart != null)
+            {
+                foreach (var item in cart)
+                {
+                    i++;
+                }
+                if (i != 0)
+                {
+                    foreach (var i1 in cart)
+                    {
+                        j++;
+                    }
+                    HttpContext.Session.SetString("cartitem", j.ToString());
+                }
+            }
+            return View(product);
         }
 
        

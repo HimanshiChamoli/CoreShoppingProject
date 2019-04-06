@@ -27,6 +27,7 @@ namespace EcommerceUserPanel.Controllers
         {
             context.Customers.Add(customer);
             context.SaveChanges();
+            HttpContext.Session.SetString("Logout", customer.Username);
             return RedirectToAction("Index");
 
         }
@@ -57,6 +58,7 @@ namespace EcommerceUserPanel.Controllers
                 {
                     HttpContext.Session.SetString("uname", userName);
                     SessionHelper.SetObjectAsJson(HttpContext.Session, "cust", user);
+                    HttpContext.Session.SetString("Logout", userName);
                     return RedirectToAction("Index", "Home", new { @id = custId });
                 }
                 else
@@ -72,6 +74,7 @@ namespace EcommerceUserPanel.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Remove("uname");
+            HttpContext.Session.Remove("Logout");
             return RedirectToAction("Index", "Home");
         }
         public IActionResult CustomerEdit()
@@ -103,8 +106,7 @@ namespace EcommerceUserPanel.Controllers
             var c = context.Customers.Where(x => x.Username == customers.Username).SingleOrDefault();
             return View(prof);
         }
-        [HttpPost]
-    
+      
 
         public IActionResult OrderHistory()
         {
@@ -126,19 +128,28 @@ namespace EcommerceUserPanel.Controllers
             ViewBag.p = products;
             return View();
         }
-
+        public IActionResult Password()
+        {
+            return View();
+        }
+        [HttpPost]
         public IActionResult Password(string oldpassword, string newpassword, string newpassword1)
         {
             Customers c = SessionHelper.GetObjectFromJson<Customers>(HttpContext.Session, "cust");
             if (oldpassword == c.Password && newpassword == newpassword1)
             {
-                Customers cus = context.Customers.Where(x => x.Username == c.Username).SingleOrDefault();
+                Customers cus = context.Customers.Where(x =>x.Username==c.Username).SingleOrDefault();
                 cus.Password = newpassword;
                 SessionHelper.SetObjectAsJson(HttpContext.Session, "cust", cus);
                 context.SaveChanges();
             }
+            else
+            {
+                ViewBag.Error = "Invalid Credentials";
+                return View("Password");
+            }
 
-            return RedirectToAction("Profile");
+            return RedirectToAction("Login","Customer");
         }
     }
 
