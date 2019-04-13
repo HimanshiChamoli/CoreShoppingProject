@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace CoreShoppingAdminPortal.Models
+namespace EcommerceUserPanel.Models
 {
-    public class Feedback
+    public partial class Feedbacks
     {
-    public int FeedbackId { get; set; }
+        public int FeedbackId { get; set; }
         public long PhoneNo { get; set; }
         public string EmailId { get; set; }
         public string Comment { get; set; }
         public int CustomerId { get; set; }
-        public Customer Customer { get; set; }
+
+        public Customers Customer { get; set; }
     }
 }

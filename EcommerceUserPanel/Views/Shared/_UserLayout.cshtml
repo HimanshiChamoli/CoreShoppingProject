@@ -40,11 +40,12 @@
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
                         <a class="dropdown-item" asp-controller="ProductCategory" asp-action="Index">Categories</a>
+                        <a class="dropdown-item" asp-controller="Brand" asp-action="Index">Brand</a>
 
                     </div>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
+            <form class="form-inline my-2 my-lg-1">
                 &nbsp;&nbsp;&nbsp;
                 <a asp-controller="cart" asp-action="Index"><i class="fa fa-shopping-cart" style="font-size:25px;color:white;" aria-hidden="true"></i><span class="aa-cart-notify"> @Context.Session.GetString("cartitem")</span></a>
                 &nbsp;&nbsp;&nbsp;
@@ -67,7 +68,7 @@
                             <a class="dropdown-item" asp-controller="customer" asp-action="CustomerEdit">Edit Profile</a>
                             <a class="dropdown-item" asp-controller="customer" asp-action="Profile">My Profile</a>
                             <a class="dropdown-item" asp-controller="customer" asp-action="OrderHistory">My Orders</a>
-                            <a class="dropdown-item" asp-controller="customer" asp-action="Password">Change Password</a>
+                            <a class="dropdown-item" asp-controller="customer" asp-action="Password">Reset Password</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" asp-action="Logout" asp-controller="Customer">Logout</a>
                         </div>

@@ -10,6 +10,6 @@ namespace CoreShoppingAdminPortal.Models
         public int BrandId { get; set; }
         public string BrandName { get; set; }
         public string BrandDescription { get; set; }
-        public List<Product> products { get; set; }
+        public List<Product> Products { get; set; }
     }
 }

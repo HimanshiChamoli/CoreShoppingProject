@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using EcommerceUserPanel.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using EcommerceUserPanel.Models;
 
 namespace EcommerceUserPanel
 {
@@ -41,6 +42,11 @@ namespace EcommerceUserPanel
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddDbContext<ShoppingDemoooo2Context>(Options =>
+            {
+                Options.UseSqlServer
+                   (Configuration.GetConnectionString("dbConnection"));
+            });
             services.AddSession();
         }
 
@@ -68,7 +74,7 @@ namespace EcommerceUserPanel
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=HomePage}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

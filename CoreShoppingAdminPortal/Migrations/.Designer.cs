@@ -4,14 +4,16 @@ using CoreShoppingAdminPortal.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CoreShoppingAdminPortal.Migrations
 {
     [DbContext(typeof(ShopDataDbContext))]
-    partial class ShopDataDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190408041634_shopdb1")]
+    partial class shopdb1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -240,7 +242,7 @@ namespace CoreShoppingAdminPortal.Migrations
             modelBuilder.Entity("CoreShoppingAdminPortal.Models.Product", b =>
                 {
                     b.HasOne("CoreShoppingAdminPortal.Models.Brand", "Brand")
-                        .WithMany("Products")
+                        .WithMany("products")
                         .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade);
 
