@@ -23,8 +23,7 @@ namespace EcommerceUserPanel.Controllers
             return View(brand);
        
         }
-        [Route("branddisplay/{id}")]
-        [HttpGet]
+      
         public async Task<IActionResult> BrandDisplay(int? id)
         {
             var p = _context.Products.Where(x => x.BrandId == id);

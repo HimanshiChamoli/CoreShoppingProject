@@ -44,10 +44,10 @@ namespace XUnitTestProject2
 
             var controller = new CustomerController(context);
             var cust = new Customers() { };
-             FirstName = "Ayesha";
-             LastName = "Khan";
-            EmailId = "Ayesha@gmail.com.com";
-             Password = "123";
+             cust.FirstName = "Ayesha";
+             cust.LastName = "Khan";
+            cust.EmailId = "Ayesha@gmail.com.com";
+            cust.Password = "123";
 
 
             var data = controller.Create();

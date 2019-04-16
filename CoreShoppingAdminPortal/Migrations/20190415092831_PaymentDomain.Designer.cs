@@ -4,14 +4,16 @@ using CoreShoppingAdminPortal.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CoreShoppingAdminPortal.Migrations
 {
     [DbContext(typeof(ShopDataDbContext))]
-    partial class ShopDataDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190415092831_PaymentDomain")]
+    partial class PaymentDomain
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,7 +79,7 @@ namespace CoreShoppingAdminPortal.Migrations
 
                     b.Property<string>("Username");
 
-                    b.Property<int>("Zip");
+                    b.Property<string>("Zip");
 
                     b.Property<string>("state");
 
@@ -148,8 +150,6 @@ namespace CoreShoppingAdminPortal.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<double>("Card_no");
-
-                    b.Property<int>("CustomerId");
 
                     b.Property<DateTime>("Date");
 

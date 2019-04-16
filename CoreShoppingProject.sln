@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreShoppingAdminPortal", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcommerceUserPanel", "EcommerceUserPanel\EcommerceUserPanel.csproj", "{DC465FE5-3628-4713-8A18-8BDBE61B0A7B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{8E0FC3E5-6D5C-45CA-9067-53F56FFC4748}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject2", "XUnitTestProject2\XUnitTestProject2.csproj", "{B59B58EE-4CDB-4CDC-BBC8-6C16F32EFF1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTestProject2", "XUnitTestProject2\XUnitTestProject2.csproj", "{B59B58EE-4CDB-4CDC-BBC8-6C16F32EFF1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{DC465FE5-3628-4713-8A18-8BDBE61B0A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC465FE5-3628-4713-8A18-8BDBE61B0A7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC465FE5-3628-4713-8A18-8BDBE61B0A7B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8E0FC3E5-6D5C-45CA-9067-53F56FFC4748}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E0FC3E5-6D5C-45CA-9067-53F56FFC4748}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E0FC3E5-6D5C-45CA-9067-53F56FFC4748}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E0FC3E5-6D5C-45CA-9067-53F56FFC4748}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B59B58EE-4CDB-4CDC-BBC8-6C16F32EFF1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B59B58EE-4CDB-4CDC-BBC8-6C16F32EFF1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B59B58EE-4CDB-4CDC-BBC8-6C16F32EFF1F}.Release|Any CPU.ActiveCfg = Release|Any CPU

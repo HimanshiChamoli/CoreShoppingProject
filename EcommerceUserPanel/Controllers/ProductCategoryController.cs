@@ -24,13 +24,13 @@ namespace EcommerceUserPanel.Controllers
             var productcat = _context.Categories.ToList();
             return View(productcat);
         }
-        [HttpGet("{id}")]
+       
       public async Task<IActionResult>ProDisplay(int? id)
         {
             var p = _context.Products.Where(x => x.ProductCategoryId == id);
             return View(p);
         }
-        [HttpGet("{id}")]
+        [HttpGet]
         public async Task <IActionResult> Display(int? id)
         {
             if (id == null)

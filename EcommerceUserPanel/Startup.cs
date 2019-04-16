@@ -13,6 +13,7 @@ using EcommerceUserPanel.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using EcommerceUserPanel.Models;
+using Stripe;
 
 namespace EcommerceUserPanel
 {
@@ -35,9 +36,9 @@ namespace EcommerceUserPanel
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+         services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(
+                  Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
@@ -48,6 +49,7 @@ namespace EcommerceUserPanel
                    (Configuration.GetConnectionString("dbConnection"));
             });
             services.AddSession();
+            services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,12 +71,13 @@ namespace EcommerceUserPanel
             app.UseCookiePolicy();
             app.UseSession();
             app.UseAuthentication();
-
+            StripeConfiguration.SetApiKey(Configuration.GetSection("Stripe")["SecretKey"]);
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+              
             });
         }
     }

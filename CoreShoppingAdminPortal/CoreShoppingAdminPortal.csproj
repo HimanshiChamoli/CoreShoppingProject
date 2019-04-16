@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20190415092709_paymentCreate.cs" />
+    <Compile Remove="Migrations\20190415092709_paymentCreate.Designer.cs" />
+    <Compile Remove="Migrations\20190416043020_paymentmodule.cs" />
+    <Compile Remove="Migrations\20190416043020_paymentmodule.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />

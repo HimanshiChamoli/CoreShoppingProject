@@ -74,6 +74,41 @@ namespace EcommerceUserPanel.Controllers
                 }
             }
         }
+        public IActionResult Login1()
+        {
+            return View();
+        }
+        //[Route("Login")]
+        [HttpPost]
+
+        public ActionResult Login1(string Password, string Username)
+        {
+            var user = _context.Customers.Where(x => x.Username == Username).SingleOrDefault();
+            ViewBag.cust = user;
+            if (user == null)
+            {
+                ViewBag.Error = "Invalid Credentials";
+                return View("Login");
+            }
+            else
+            {
+                var userName = user.Username;
+                int custId = ViewBag.cust.CustomerId;
+                if (userName != null && Password != null && userName.Equals(userName)
+                    && Password.Equals(user.Password))
+                {
+                    HttpContext.Session.SetString("uname", userName);
+                    SessionHelper.SetObjectAsJson(HttpContext.Session, "cust", user);
+                    HttpContext.Session.SetString("Logout", userName);
+                    return RedirectToAction("Index", "Home", new { @id = custId });
+                }
+                else
+                {
+                    ViewBag.Error = "Invalid Credentials";
+                    return View("Login");
+                }
+            }
+        }
         [Route("Logout")]
         [HttpGet]
 

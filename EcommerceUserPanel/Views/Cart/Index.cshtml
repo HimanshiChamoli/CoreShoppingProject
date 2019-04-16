@@ -1,4 +1,4 @@
-﻿ @{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
@@ -25,7 +25,7 @@
             <td>@Item.products.ProductName</td>
             <td><img src="@Item.products.ProductImage" width="60" /></td>
             <td>@Item.products.ProductPrice</td>
-            <td><a class="btn btn-default" asp-controller="Cart" asp-action="Minus"asp-route-id="@Item.products.ProductId">-</a>@Item.Quantity <a class="btn btn-default" asp-controller="Cart" asp-action="Plus" asp-route-id="@Item.products.ProductId">+</a></td>
+            <td><a class="btn btn-default" asp-controller="Cart" asp-action="Minus" asp-route-id="@Item.products.ProductId">-</a>@Item.Quantity <a class="btn btn-default" asp-controller="Cart" asp-action="Plus" asp-route-id="@Item.products.ProductId">+</a></td>
             <td>@(Item.products.ProductPrice * Item.Quantity)</td>
         </tr>
     }
@@ -39,6 +39,13 @@
 </table>
 <br />
 <a asp-controller="Home" asp-action="Index">Continue Shopping</a>
-<a asp-controller="Cart" asp-action="CheckOut">CheckOut</a>
+@if (ViewBag.i == 0)
+{
+    <a asp-controller="Customer" asp-action="Login1">CheckOut</a>
+}
+else
+{
+    <a asp-controller="Cart" asp-action="CheckOut">CheckOut</a>
+}
 
 <script src="~/js/sites.js"></script>

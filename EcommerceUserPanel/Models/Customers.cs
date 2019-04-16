@@ -16,7 +16,7 @@ namespace EcommerceUserPanel.Models
         public string LastName { get; set; }
         public string EmailId { get; set; }
         public string Gender { get; set; }
-        public long PhoneNo { get; set; }
+        public double PhoneNo { get; set; }
         public string Password { get; set; }
         public string Address { get; set; }
         public string Country { get; set; }

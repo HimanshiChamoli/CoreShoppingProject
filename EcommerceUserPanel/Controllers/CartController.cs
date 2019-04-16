@@ -36,6 +36,14 @@ namespace EcommerceUserPanel.Controllers
                 {
                     ViewBag.cart = cart;
                     ViewBag.total = cart.Sum(item => item.products.ProductPrice * item.Quantity);
+                    if (SessionHelper.GetObjectFromJson<Customers>(HttpContext.Session, "cust")==null)
+                    {
+                        ViewBag.i = 0;
+                    }
+                    else
+                    {
+                        ViewBag.i = 1;
+                    }
                     return View();
                 }
 
@@ -108,7 +116,7 @@ namespace EcommerceUserPanel.Controllers
                 OrderProducts.ForEach(n => _context.OrderProducts.Add(n));
                 _context.SaveChanges();
                 TempData["cust"] = c.CustomerId;
-                return RedirectToAction("Invoice");
+                return RedirectToAction("Index","payment");
             }
      
     
@@ -193,9 +201,11 @@ namespace EcommerceUserPanel.Controllers
         public IActionResult Invoice()
         {
             int custId = int.Parse(TempData["cust"].ToString());
+            //int paymentId= int.Parse(TempData["pay"].ToString());
             Customers customers = _context.Customers.Where(x => x.CustomerId == custId).SingleOrDefault();
             ViewBag.Cust = customers;
-
+            //Payments payments = _context.Payments.Where(x => x.PaymentId == paymentId).SingleOrDefault();
+            //ViewBag.pay = payments;
 
             var cart = SessionHelper.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
             ViewBag.cart = cart;

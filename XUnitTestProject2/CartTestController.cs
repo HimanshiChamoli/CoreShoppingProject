@@ -54,7 +54,7 @@ namespace XUnitTestProject2
 
                     PhoneNo = 6890851362,
 
-                    Zip = 1100067,
+                    Zip = 110056,
 
                     Gender = "Female",
 

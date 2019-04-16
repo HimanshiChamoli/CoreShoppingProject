@@ -3,91 +3,51 @@
     ViewData["Title"] = "About";
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
-<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/carousel/">
-<link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link href="~/css/About.css" />
-<main role="main">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <svg class="bd-placeholder-img" width="500" height="700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"> </svg>
-                <div class="container">
-                    <div class="carousel-caption text-left">
-                        <img src="~/images/AboutUs1.jpg" height="450" width="700" />
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <svg class="bd-placeholder-img" width="500" height="700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"></svg>
-                <div class="container">
-                    <div class="carousel-caption">
-                        <img src="~/images/AboutUs2.jpg" height="450" width="700" />
-                        <h1>Another example headline.</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <svg class="bd-placeholder-img" width="500" height="700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"></svg>
-                <div class="container">
-                    <div class="carousel-caption text-right">
-                        <img src="~/images/AboutUs3.jpg" height="450" width="700" />
-                        <h1>One more for good measure.</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-                    </div>
+<!-- Main stylesheet and color file
+<link href="~/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="~/css/team.css" rel="stylesheet" type="text/css" media="all" />
+<link href="~/css/style2.css" rel="stylesheet" type="text/css" media="all" />
+<link href="~/css/font-awesome.css" rel="stylesheet">
+ //for bootstrap working
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>-->
+
+<link href="~/css/About.css" rel="stylesheet">
+<style>
+    .img {
+        margin-left: 650px;
+        margin-top: -300px;
+    }
+
+    .imge {
+        margin-right: 650px;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="main">
+    <section class="module bg-dark-60 about-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-5">
+
+                    <h2 class="module-title font-alt">About</h2>
+
+                    <div class="module-subtitle font-serif">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
+
                 </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-    <div class="container marketing">
-
-        <!-- Three columns of text below the carousel -->
-        <div class="row">
-            <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-                <h2>Heading</h2>
-                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-            </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-        <!-- START THE FEATURETTES -->
-    </div>
+    </section>
     <hr class="featurette-divider">
 
     <div class="row featurette">
-        <div class="col-md-7">
-            <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        <div class="col-md-7 ">
+            <h2 class="featurette-heading"> <span class="text-muted">It’ll blow your mind.</span></h2>
+            <p class="lead">Shopping Mania is a one stop shop for all your fashion and lifestyle needs. Being  largest e-commerce store for fashion and lifestyle products, It aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal. The brand is making a conscious effort to bring the power of fashion to shoppers with an array of the latest and trendiest products available in the country.</p>
         </div>
-        <div class="col-md-5">
-            <img src="~/images/Women1.jpg" height="500" width="600" />
-            @*<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">*@
-
+        <div>
+            <img src="~/images/abt.jpg" class="img" height="500" width="700" />
         </div>
     </div>
 
@@ -95,36 +55,213 @@
 
     <div class="row featurette">
         <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted"></span></h2>
+            <p class="lead">Shopping Mania features a massive selection of great products from hundreds of leading national and international brands. A part of the retail and hospitality conglomerate the Landmark Group, It offers women's, men’s  fashion accessories, and much more, all under the same roof.</p>
         </div>
         <div class="col-md-5 order-md-1">
-            <img src="~/images/Women2.jpg" height="500" width="400" />
-            <br />
-            <br />
-            @*<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"></svg>*@
+            <img src="~/images/Women2.jpg" class="imge" height="500" width="700" />
         </div>
     </div>
-    <hr class="featurette-divider">
+    @*<div class="coupons">
+            <div class="coupons-grids text-center">
+                <div class="w3layouts_mail_grid">
+                    <div class="col-md-3 w3layouts_mail_grid_left">
+                        <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                            <i class="fa fa-truck" aria-hidden="true"></i>
+                        </div>
+                        <div class="w3layouts_mail_grid_left2">
+                            <h3>FREE SHIPPING</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 w3layouts_mail_grid_left">
+                        <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                            <i class="fa fa-headphones" aria-hidden="true"></i>
+                        </div>
+                        <div class="w3layouts_mail_grid_left2">
+                            <h3>24/7 SUPPORT</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 w3layouts_mail_grid_left">
+                        <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                        </div>
+                        <div class="w3layouts_mail_grid_left2">
+                            <h3>MONEY BACK GUARANTEE</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 w3layouts_mail_grid_left">
+                        <div class="w3layouts_mail_grid_left1 hvr-radial-out">
+                            <i class="fa fa-gift" aria-hidden="true"></i>
+                        </div>
+                        <div class="w3layouts_mail_grid_left2">
+                            <h3>FREE GIFT COUPONS</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur</p>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
 
-    <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            </div>
         </div>
-        <div class="col-md-5 order-md-2">
-            <img src="~/images/Women3.jpg" height="500" width="400" />
+        <!--grids-->
+        <!-- footer -->
+        <div class="footer">
+            <div class="footer_agile_inner_info_w3l">
+                <div class="col-md-3 footer-left">
+                    <h2><a href="index.html">Shopping Mania </a></h2>
+                    <p>
+                        The best way to find out what we really need is to get rid of what we don't. Quests to faraway places or shopping sprees are no longer necessary. All you have to do is eliminate what you don't need by confronting each of your possessions properly.
 
-            <br />
-            @*<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"></svg>*@
+                    </p>
+                    <ul class="social-nav model-3d-0 footer-social w3_agile_social two">
+                        <li>
+                            <a href="#" class="facebook">
+                                <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                                <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="twitter">
+                                <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                                <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="instagram">
+                                <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                                <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="pinterest">
+                                <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                                <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-9 footer-right">
+                    <div class="sign-grds">
+                        <div class="col-md-4 sign-gd">
+                            <h4>Our <span>Information</span> </h4>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="mens.html">Men's Wear</a></li>
+                                <li><a href="womens.html">Women's wear</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="typography.html">Short Codes</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-5 sign-gd-two">
+                            <h4>Store <span>Information</span></h4>
+                            <div class="w3-address">
+                                <div class="w3-address-grid">
+                                    <div class="w3-address-left">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="w3-address-right">
+                                        <h6>Phone Number</h6>
+                                        <p>+919716061230</p>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                </div>
+                                <div class="w3-address-grid">
+                                    <div class="w3-address-left">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="w3-address-right">
+                                        <h6>Email Address</h6>
+                                        <p>Email :<a href="tanishajain059@gmail.com"> mail@example.com</a></p>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                </div>
+                                <div class="w3-address-grid">
+                                    <div class="w3-address-left">
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="w3-address-right">
+                                        <h6>Location</h6>
+                                        <p>
+                                          Palam Colony,New Delhi
+
+                                        </p>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+
+                <p class="copy-right">&copyright 2019 Shopping Mania. All rights reserved </p>
+            </div>
         </div>
-    </div>
-    <br/>
-    <p class="float-right"><a href="#">Back to top</a></p>
-    <p>&copy; 2017-2019 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <!-- //footer -->
+        <!-- login -->
+        <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content modal-info">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body modal-spa">
+                        <div class="login-grids">
+                            <div class="login">
+                                <div class="login-bottom">
+                                    <h3>Sign up for free</h3>
+                                    <form>
+                                        <div class="sign-up">
+                                            <h4>Email :</h4>
+                                            <input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required="">
+                                        </div>
+                                        <div class="sign-up">
+                                            <h4>Password :</h4>
+                                            <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
 
-</main>
+                                        </div>
+                                        <div class="sign-up">
+                                            <h4>Re-type Password :</h4>
+                                            <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+                                        </div>
+                                        <div class="sign-up">
+                                            <input type="submit" value="REGISTER NOW">
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                                <div class="clearfix"></div>
+                            </div>
+                            <p>By logging in you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+</div>
+<div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+    </main>
+
+<script src="assets/lib/jquery/dist/jquery.js"></script>
+<script src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="assets/lib/wow/dist/wow.js"></script>
+<script src="assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+<script src="assets/lib/isotope/dist/isotope.pkgd.js"></script>
+<script src="assets/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+<script src="assets/lib/flexslider/jquery.flexslider.js"></script>
+<script src="assets/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+<script src="assets/lib/smoothscroll.js"></script>
+<script src="assets/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
+<script src="assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/main.js"></script>
